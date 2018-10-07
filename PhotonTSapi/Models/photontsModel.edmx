@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="photontsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="_id" />
+          </Key>
+          <Property Name="_name" Type="varchar" MaxLength="20" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+          <Property Name="_id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="session">
+          <Key>
+            <PropertyRef Name="_id" />
+          </Key>
+          <Property Name="sid" Type="varchar" MaxLength="50" />
+          <Property Name="data" Type="varchar" MaxLength="500" />
+          <Property Name="_id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timesheet">
+          <Key>
+            <PropertyRef Name="_id" />
+          </Key>
+          <Property Name="_name" Type="varchar" MaxLength="20" />
+          <Property Name="begindate" Type="datetime" Precision="0" />
+          <Property Name="enddate" Type="datetime" Precision="0" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+          <Property Name="user_id" Type="varchar" MaxLength="50" />
+          <Property Name="_id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timeunit">
+          <Key>
+            <PropertyRef Name="_id" />
+          </Key>
+          <Property Name="dateworked" Type="datetime" Precision="0" />
+          <Property Name="hoursworked" Type="varchar" MaxLength="10" />
+          <Property Name="project" Type="varchar" MaxLength="50" />
+          <Property Name="timesheet_id" Type="varchar" MaxLength="50" />
+          <Property Name="project_id" Type="varchar" MaxLength="50" />
+          <Property Name="_id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="_id" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="eamil" Type="varchar" MaxLength="50" />
+          <Property Name="admin" Type="bool" />
+          <Property Name="firstname" Type="varchar" MaxLength="20" />
+          <Property Name="lastname" Type="varchar" MaxLength="20" />
+          <Property Name="_id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="photontsModelStoreContainer">
+          <EntitySet Name="project" EntityType="Self.project" Schema="photonts" store:Type="Tables" />
+          <EntitySet Name="session" EntityType="Self.session" Schema="photonts" store:Type="Tables" />
+          <EntitySet Name="timesheet" EntityType="Self.timesheet" Schema="photonts" store:Type="Tables" />
+          <EntitySet Name="timeunit" EntityType="Self.timeunit" Schema="photonts" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="photonts" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="photontsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="C_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="session">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="sid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="C_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timesheet">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="C_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="begindate" Type="DateTime" />
+          <Property Name="enddate" Type="DateTime" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timeunit">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="dateworked" Type="DateTime" />
+          <Property Name="hoursworked" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="project" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="timesheet_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="project_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="eamil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="admin" Type="Boolean" />
+          <Property Name="firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="C_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="photontsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="projects" EntityType="Self.project" />
+          <EntitySet Name="sessions" EntityType="Self.session" />
+          <EntitySet Name="timesheets" EntityType="Self.timesheet" />
+          <EntitySet Name="timeunits" EntityType="Self.timeunit" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="photontsModelStoreContainer" CdmEntityContainer="photontsEntities">
+          <EntitySetMapping Name="projects">
+            <EntityTypeMapping TypeName="photontsModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="C_name" ColumnName="_name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sessions">
+            <EntityTypeMapping TypeName="photontsModel.session">
+              <MappingFragment StoreEntitySet="session">
+                <ScalarProperty Name="sid" ColumnName="sid" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timesheets">
+            <EntityTypeMapping TypeName="photontsModel.timesheet">
+              <MappingFragment StoreEntitySet="timesheet">
+                <ScalarProperty Name="C_name" ColumnName="_name" />
+                <ScalarProperty Name="begindate" ColumnName="begindate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timeunits">
+            <EntityTypeMapping TypeName="photontsModel.timeunit">
+              <MappingFragment StoreEntitySet="timeunit">
+                <ScalarProperty Name="dateworked" ColumnName="dateworked" />
+                <ScalarProperty Name="hoursworked" ColumnName="hoursworked" />
+                <ScalarProperty Name="project" ColumnName="project" />
+                <ScalarProperty Name="timesheet_id" ColumnName="timesheet_id" />
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="photontsModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="eamil" ColumnName="eamil" />
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

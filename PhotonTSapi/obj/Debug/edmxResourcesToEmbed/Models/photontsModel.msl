@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="photontsModelStoreContainer" CdmEntityContainer="photontsEntities">
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="photontsModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="C_name" ColumnName="_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sessions">
+      <EntityTypeMapping TypeName="photontsModel.session">
+        <MappingFragment StoreEntitySet="session">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timesheets">
+      <EntityTypeMapping TypeName="photontsModel.timesheet">
+        <MappingFragment StoreEntitySet="timesheet">
+          <ScalarProperty Name="C_name" ColumnName="_name" />
+          <ScalarProperty Name="begindate" ColumnName="begindate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timeunits">
+      <EntityTypeMapping TypeName="photontsModel.timeunit">
+        <MappingFragment StoreEntitySet="timeunit">
+          <ScalarProperty Name="dateworked" ColumnName="dateworked" />
+          <ScalarProperty Name="hoursworked" ColumnName="hoursworked" />
+          <ScalarProperty Name="project" ColumnName="project" />
+          <ScalarProperty Name="timesheet_id" ColumnName="timesheet_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="photontsModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="eamil" ColumnName="eamil" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
